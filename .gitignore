@@ -27,3 +27,14 @@ proguard/
 *.ipr
 *.iws
 .idea/
+BusMapping/src/main/res/drawable-hdpi/argentina.png
+BusMapping/src/main/res/drawable-hdpi/australia.png
+BusMapping/src/main/res/drawable-hdpi/austria.png
+BusMapping/src/main/res/drawable-hdpi/belgium.png
+BusMapping/src/main/res/drawable-hdpi/brazil.png
+BusMapping/src/main/res/drawable-hdpi/cameroon.png
+BusMapping/src/main/res/drawable-hdpi/canada.png
+BusMapping/src/main/res/drawable-hdpi/chile.png
+BusMapping/src/main/res/drawable-hdpi/china.png
+BusMapping/src/main/res/drawable-hdpi/denmark.png
+BusMapping/src/main/res/drawable-hdpi/finland.png
