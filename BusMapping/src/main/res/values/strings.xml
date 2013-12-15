@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Bus Mapping</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="app_name">Hyderabad Transport</string>
+    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string-array name="busNumbers">
+        <item>10H</item>
+        <item>158F</item>
+        <item>10Y/F</item>
+        <item>10K</item>
+        <item>9F</item>
+    </string-array>
+    <string-array name="busRoutes">
+        <item>Secendarabad to Kondapur</item>
+        <item>LB Nagar to Borabanda</item>
+        <item>Secendarabad to Borabanda</item>
+        <item>Secendarabad to Kukatpally</item>
+        <item>Borabanda to CBS</item>
+    </string-array>
+    <string-array name="viaRoutes">
+        <item>via Hi-tech city, Ammerpet</item>
+        <item>via Erragadda, Ammerpet</item>
+        <item>via Yousafguda, Ammerpet</item>
+        <item>via Erragadda, Ammerpet</item>
+        <item>via Koti, Ammerpet, Erragadda</item>
+    </string-array>
+
+
 
 </resources>

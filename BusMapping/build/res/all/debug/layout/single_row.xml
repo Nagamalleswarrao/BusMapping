@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="10H"
+            android:width="160dp"
+            android:height="80dp"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:paddingTop="9dp"
+            android:paddingLeft="15dp"
+            android:id="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Secendarabad to Kondapur"
+            android:textSize="20dp"
+            android:paddingTop="14dp"
+            android:id="@+id/textView2"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="via Hi-tech city, Ammerpet"
+            android:textSize="14dp"
+            android:textStyle="italic"
+            android:paddingTop="3dp"
+            android:paddingBottom="18dp"
+            android:id="@+id/textView3"
+            android:layout_below="@+id/textView2"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignBottom="@+id/textView3"
+            android:background="#000" />
+
+    </RelativeLayout>
+
+     <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/child"
+        android:paddingTop="5dip"
+        android:visibility="gone"
+         android:layout_alignParentTop="true">
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/buttDirections"
+            android:text="Directions"/>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/buttTimings"
+            android:text="Timings"/>
+    </LinearLayout>
+</LinearLayout><!-- From: file:/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/src/main/res/layout/single_row.xml -->

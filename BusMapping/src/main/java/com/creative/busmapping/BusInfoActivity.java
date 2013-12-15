@@ -15,7 +15,7 @@ public class BusInfoActivity extends ListActivity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_view);
+        setContentView(R.layout.single_row);
 
         SimpleAdapter adapter = new SimpleAdapter(
                 this,

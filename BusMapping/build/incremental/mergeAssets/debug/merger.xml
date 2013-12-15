@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="ComAndroidSupportAppcompatV71900.aar" >
+        <source path="/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/build/exploded-bundles/ComAndroidSupportAppcompatV71900.aar/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/src/main/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/src/debug/assets" />
+    </dataSet>
+
+</merger>
