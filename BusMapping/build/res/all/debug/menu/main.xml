@@ -7,5 +7,6 @@
         android:title="Settings"
         android:orderInCategory="100"
         app:showAsAction="never" />
+
 </menu>
 <!-- From: file:/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/src/main/res/menu/main.xml -->

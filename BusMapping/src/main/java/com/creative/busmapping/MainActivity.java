@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends Activity {
 
@@ -25,16 +26,17 @@ public class MainActivity extends Activity {
         list = (ListView) findViewById(R.id.listView);
         list.setAdapter(new ListViewAdapter(this));
 
-        Resources res = getResources();
-        Drawable divider = res.getDrawable(R.drawable.line);
-        getListView().setDivider(divider);
-        getListView().setDividerHeight(1);
-        registerForContextMenu(getListView());
+//        Resources res = getResources();
+//        Drawable divider = res.getDrawable(R.drawable.line);
+//        getListView().setDivider(divider);
+//        getListView().setDividerHeight(1);
+//        registerForContextMenu(getListView());
 
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 View view1 = view.findViewById(R.id.parent);
+                getListView().setOnClickListener(null);
 
                 final View view2 = view.findViewById(R.id.child);
                 view1.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +64,7 @@ class SingleRow{
     String busRoute;
     String viaRoute;
 
-    SingleRow(String busNumbers,String busRoutes,String viaRoutes)
+    SingleRow(String busNumbers, String busRoutes, String viaRoutes)
     {
         this.busNumber = busNumbers;
         this.busRoute = busRoutes;
@@ -82,7 +84,7 @@ class ListViewAdapter extends BaseAdapter{
         String[] busNumbers = res.getStringArray(R.array.busNumbers);
         String[] busRoutes = res.getStringArray(R.array.busRoutes);
         String[] viaRoutes = res.getStringArray(R.array.viaRoutes);
-        for(int i=0;i<5;i++)
+        for(int i=0;i<busNumbers.length;i++)
         {
             list.add(new SingleRow(busNumbers[i],busRoutes[i],viaRoutes[i]));
         }
@@ -112,6 +114,19 @@ class ListViewAdapter extends BaseAdapter{
         TextView busNumber = (TextView) row.findViewById(R.id.textView);
         TextView busRoute = (TextView) row.findViewById(R.id.textView2);
         TextView viaRoute = (TextView) row.findViewById(R.id.textView3);
+
+        if (i==0)
+        {
+            row.setBackgroundResource(R.drawable.violet);
+        }else if (i==2){
+            row.setBackgroundResource(R.drawable.blue);
+        } else if (i==3){
+            row.setBackgroundResource(R.drawable.glowblue);
+        }else if (i ==4){
+            row.setBackgroundResource(R.drawable.red);
+        }else if (i == 1){
+            row.setBackgroundResource(R.drawable.red);
+        }
 
         SingleRow temp = list.get(i);
         busNumber.setText(temp.busNumber);
