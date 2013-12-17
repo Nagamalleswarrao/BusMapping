@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ import java.util.HashMap;
 public class MainActivity extends Activity {
 
     ListView list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +28,13 @@ public class MainActivity extends Activity {
         list = (ListView) findViewById(R.id.listView);
         list.setAdapter(new ListViewAdapter(this));
 
+//        final Button buttDirections = (Button) findViewById(R.id.buttDirections);
+//        buttDirections.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                buttDirections.setBackgroundResource(R.drawable.clock);
+//            }
+//        });
 //        Resources res = getResources();
 //        Drawable divider = res.getDrawable(R.drawable.line);
 //        getListView().setDivider(divider);
@@ -36,9 +45,9 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 View view1 = view.findViewById(R.id.parent);
-                getListView().setOnClickListener(null);
 
                 final View view2 = view.findViewById(R.id.child);
+                view2.setVisibility(View.VISIBLE);
                 view1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -115,18 +124,35 @@ class ListViewAdapter extends BaseAdapter{
         TextView busRoute = (TextView) row.findViewById(R.id.textView2);
         TextView viaRoute = (TextView) row.findViewById(R.id.textView3);
 
-        if (i==0)
+//        if (i==0)
+//        {
+//            row.setBackgroundResource(R.drawable.violet);
+//        }else if (i==2){
+//            row.setBackgroundResource(R.drawable.blue);
+//        } else if (i==3){
+//            row.setBackgroundResource(R.drawable.glowblue);
+//        }else if (i ==4){
+//            row.setBackgroundResource(R.drawable.red);
+//        }else if (i == 1){
+//            row.setBackgroundResource(R.drawable.red);
+//        }
+
+        if (i%2 == 0)
         {
             row.setBackgroundResource(R.drawable.violet);
-        }else if (i==2){
+        }
+        else if (i%3 == 0)
+        {
             row.setBackgroundResource(R.drawable.blue);
-        } else if (i==3){
-            row.setBackgroundResource(R.drawable.glowblue);
-        }else if (i ==4){
-            row.setBackgroundResource(R.drawable.red);
-        }else if (i == 1){
+        }
+        else if (i%5 == 0)
+        {
             row.setBackgroundResource(R.drawable.red);
         }
+        else {
+            row.setBackgroundResource((i%2 == 0)? R.drawable.violet : R.drawable.glowblue);
+        }
+
 
         SingleRow temp = list.get(i);
         busNumber.setText(temp.busNumber);

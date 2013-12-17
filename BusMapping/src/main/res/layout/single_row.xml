@@ -56,13 +56,6 @@
             android:layout_toRightOf="@+id/textView"
             android:layout_alignParentRight="true" />
 
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100px"-->
-            <!--android:layout_alignBottom="@+id/textView3"-->
-            <!--android:background="#000" />-->
-
-
     </RelativeLayout>
 
      <LinearLayout
@@ -72,18 +65,29 @@
         android:paddingTop="5dip"
         android:visibility="gone"
         android:background="#000"
+        android:paddingBottom="3dp"
         android:layout_alignParentTop="true">
 
          <Button
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:id="@+id/buttDirections"
-            android:text="Directions"/>
+            android:text=" Directions"
+            android:textSize="15dp"
+            android:textColor="#fff"
+            android:drawableLeft="@drawable/marker"
+            android:paddingLeft="80dp"
+            android:paddingRight="10dp"
+            android:background="#000"/>
 
         <Button
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:id="@+id/buttTimings"
-            android:text="Timings"/>
+            android:text=" Timings"
+            android:textSize="15dp"
+            android:textColor="#fff"
+            android:drawableLeft="@drawable/clock"
+            android:background="#000"/>
     </LinearLayout>
 </LinearLayout>
