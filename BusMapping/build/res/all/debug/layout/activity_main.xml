@@ -14,5 +14,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
      />
+
 </RelativeLayout>
 <!-- From: file:/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/src/main/res/layout/activity_main.xml -->

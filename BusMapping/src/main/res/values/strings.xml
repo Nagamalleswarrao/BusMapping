@@ -4,12 +4,18 @@
     <string name="app_name">Hyderabad Transport</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
     <string-array name="busNumbers">
         <item>10H</item>
         <item>158F</item>
         <item>10Y/F</item>
         <item>10K</item>
         <item>9F</item>
+        <item>1</item>
+        <item>18</item>
+        <item>1E</item>
+        <item>1i</item>
+        <item>1k</item>
     </string-array>
     <string-array name="busRoutes">
         <item>Secendarabad to Kondapur</item>
@@ -17,15 +23,26 @@
         <item>Secendarabad to Borabanda</item>
         <item>Secendarabad to Kukatpally</item>
         <item>Borabanda to CBS</item>
+        <item>Afzalgunj to Secendarabad</item>
+        <item>Afzalgunj to JBS</item>
+        <item>Afzalgunj to Tukuram Gate</item>
+        <item>Secendarabad to MGBS</item>
+        <item>Secendarabad to MGBS</item>
     </string-array>
     <string-array name="viaRoutes">
         <item>via Hi-tech city, Ammerpet</item>
         <item>via Erragadda, Ammerpet</item>
         <item>via Yousafguda, Ammerpet</item>
         <item>via Erragadda, Ammerpet</item>
-        <item>via Koti, Ammerpet, Erragadda</item>
+        <item>via YMCA(Koti) Bus Stop, RTC Cross Rd, Musheerabad Bus Stop</item>
+        <item>via Bhoiguda, Musheerabad Bus Stop, Koti Bus Stop</item>
+        <item>via Putlibowli, YMCA(Koti) Bus Stop, RTC Cross Rd</item>
+        <item>via Bhoiguda, RTC Cross Rd, Koti Bus Stop</item>
+        <item>via Ram Koti, YMCA(Koti) Bus Stop, Bhoiguda</item>
+        <item>via Ram Koti, YMCA(Koti) Bus Stop, Bhoiguda</item>
     </string-array>
 
-
+    <string name="title_activity_map_activity2">MapActivity2</string>
+    <string name="title_activity_directions">DirectionsActivity</string>
 
 </resources>

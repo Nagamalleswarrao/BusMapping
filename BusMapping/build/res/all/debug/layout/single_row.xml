@@ -71,14 +71,15 @@
          <Button
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:id="@+id/buttDirections"
-            android:text=" Directions"
+            android:id="@+id/buttRoute"
+            android:text=" Route"
             android:textSize="15dp"
             android:textColor="#fff"
             android:drawableLeft="@drawable/marker"
             android:paddingLeft="80dp"
             android:paddingRight="10dp"
-            android:background="#000"/>
+            android:background="#000"
+             android:onClick="onClick"/>
 
         <Button
             android:layout_height="wrap_content"
@@ -88,6 +89,7 @@
             android:textSize="15dp"
             android:textColor="#fff"
             android:drawableLeft="@drawable/clock"
-            android:background="#000"/>
+            android:background="#000"
+            android:onClick="onClick"/>
     </LinearLayout>
 </LinearLayout><!-- From: file:/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/src/main/res/layout/single_row.xml -->
