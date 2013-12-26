@@ -19,7 +19,11 @@ public final class R {
     public static final class array {
         public static final int busNumbers=0x7f050000;
         public static final int busRoutes=0x7f050001;
-        public static final int viaRoutes=0x7f050002;
+        public static final int fromLatitude=0x7f050002;
+        public static final int fromLongitude=0x7f050003;
+        public static final int toLatitude=0x7f050004;
+        public static final int toLongitude=0x7f050005;
+        public static final int viaRoutes=0x7f050006;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"

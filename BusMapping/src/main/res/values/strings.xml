@@ -42,6 +42,54 @@
         <item>via Ram Koti, YMCA(Koti) Bus Stop, Bhoiguda</item>
     </string-array>
 
+    <string-array name="fromLatitude">
+        <item>17.451619700000000000</item>
+        <item>17.451619700000000000</item>
+        <item>17.451619700000000000</item>
+        <item>17.451619700000000000</item>
+        <item>17.451619700000000000</item>
+        <item>17.451619700000000000</item>
+        <item>17.451619700000000000</item>
+        <item>17.451619700000000000</item>
+        <item>17.451619700000000000</item>
+    </string-array>
+
+    <string-array name="fromLongitude">
+        <item>78.416924999999990000</item>
+        <item>78.416924999999990000</item>
+        <item>78.416924999999990000</item>
+        <item>78.416924999999990000</item>
+        <item>78.416924999999990000</item>
+        <item>78.416924999999990000</item>
+        <item>78.416924999999990000</item>
+        <item>78.416924999999990000</item>
+        <item>78.416924999999990000</item>
+    </string-array>
+
+    <string-array name="toLatitude">
+        <item>17.432614500000000000</item>
+        <item>17.432614500000000000</item>
+        <item>17.432614500000000000</item>
+        <item>17.432614500000000000</item>
+        <item>17.432614500000000000</item>
+        <item>17.432614500000000000</item>
+        <item>17.432614500000000000</item>
+        <item>17.432614500000000000</item>
+        <item>17.432614500000000000</item>
+    </string-array>
+
+    <string-array name="toLongitude">
+        <item>78.502896299999970000</item>
+        <item>78.502896299999970000</item>
+        <item>78.502896299999970000</item>
+        <item>78.502896299999970000</item>
+        <item>78.502896299999970000</item>
+        <item>78.502896299999970000</item>
+        <item>78.502896299999970000</item>
+        <item>78.502896299999970000</item>
+        <item>78.502896299999970000</item>
+    </string-array>
+
     <string name="title_activity_map_activity2">MapActivity2</string>
     <string name="title_activity_directions">DirectionsActivity</string>
 

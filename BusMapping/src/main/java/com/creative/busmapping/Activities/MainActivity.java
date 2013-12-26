@@ -44,8 +44,12 @@ public class MainActivity extends Activity {
         });
     }
 
-    private void openMap(String route){
+    private void openMap(double frmLat, double frmLng, double toLat, double tolng){
         Intent intent = new Intent(MainActivity.this, DirectionsActivity.class);
+        intent.putExtra("From Latitude",frmLat);
+        intent.putExtra("From Longitude",frmLng);
+        intent.putExtra("To Latitude",toLat);
+        intent.putExtra("To Longitude",tolng);
         startActivity(intent);
     }
 
@@ -53,7 +57,7 @@ public class MainActivity extends Activity {
         int id = view.getId();
         switch (id){
             case R.id.buttRoute:
-                openMap("Hyderabad");
+                openMap(17.451619700000000000,78.416924999999990000,17.432614500000000000,78.502896299999970000);
                 break;
             case R.id.buttTimings:
                 break;
@@ -76,7 +80,7 @@ public class MainActivity extends Activity {
         if (id == R.id.action_settings) {
             return true;
         }else if(id == R.id.action_myLocation){
-            openMap("Hyderabad");
+            openMap(17.451619700000000000,78.416924999999990000,17.432614500000000000,78.502896299999970000);
         }
         return super.onOptionsItemSelected(item);
     }

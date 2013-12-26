@@ -2,6 +2,7 @@ package com.creative.busmapping.Activities;
 
 import android.app.Fragment;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
@@ -13,6 +14,9 @@ import android.view.ViewGroup;
 
 import com.creative.busmapping.GoogleDirections;
 import com.creative.busmapping.R;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesClient;
+import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -28,14 +32,21 @@ public class DirectionsActivity extends FragmentActivity {
 
     GoogleMap mMap;
     GoogleDirections mDirections;
-
-    LatLng fromPosition = new LatLng(17.451619700000000000, 78.416924999999990000);
-    LatLng toPosition = new LatLng(17.432614500000000000, 78.502896299999970000);
+    LocationClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_directions);
+        Bundle extras = getIntent().getExtras();
+
+        Double frmLat = extras.getDouble("From Latitude");
+        Double frmLng = extras.getDouble("From Longitude");
+        Double toLat = extras.getDouble("To Latitude");
+        Double toLng = extras.getDouble("To Longitude");
+
+        LatLng fromPosition = new LatLng(frmLat, frmLng);
+        LatLng toPosition = new LatLng(toLat, toLng);
 
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -46,8 +57,31 @@ public class DirectionsActivity extends FragmentActivity {
         mMap = ((SupportMapFragment)getSupportFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
 
-        LatLng coordinates = new LatLng(17.451619700000000000, 78.416924999999990000);
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 16));
+        mMap.setMyLocationEnabled(true);
+
+        client = new LocationClient(DirectionsActivity.this,
+                new GooglePlayServicesClient.ConnectionCallbacks() {
+                    @Override
+                    public void onConnected(Bundle bundle) {
+
+                        Location loc = client.getLastLocation();
+                        LatLng coordinates = new LatLng(loc.getLatitude(), loc.getLongitude());
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 12));
+                    }
+
+                    @Override
+                    public void onDisconnected() {
+
+                    }
+                }, new GooglePlayServicesClient.OnConnectionFailedListener() {
+
+            @Override
+            public void onConnectionFailed(ConnectionResult connectionResult) {
+
+            }
+        }
+        );
+        client.connect();
 
         mMap.addMarker(new MarkerOptions().position(fromPosition).title("Start"));
         mMap.addMarker(new MarkerOptions().position(toPosition).title("End"));
