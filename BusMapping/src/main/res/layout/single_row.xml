@@ -62,10 +62,8 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:id="@+id/child"
-        android:paddingTop="5dip"
         android:visibility="gone"
         android:background="#000"
-        android:paddingBottom="3dp"
         android:layout_alignParentTop="true">
 
          <Button
@@ -75,7 +73,7 @@
             android:text=" Route"
             android:textSize="15dp"
             android:textColor="#fff"
-            android:drawableLeft="@drawable/marker"
+            android:drawableLeft="@drawable/ic_action_place"
             android:paddingLeft="80dp"
             android:paddingRight="10dp"
             android:background="#000"
@@ -88,7 +86,7 @@
             android:text=" Timings"
             android:textSize="15dp"
             android:textColor="#fff"
-            android:drawableLeft="@drawable/clock"
+            android:drawableLeft="@drawable/ic_action_time"
             android:background="#000"
             android:onClick="onClick"/>
     </LinearLayout>

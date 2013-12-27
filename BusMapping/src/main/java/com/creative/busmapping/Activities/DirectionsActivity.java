@@ -33,20 +33,20 @@ public class DirectionsActivity extends FragmentActivity {
     GoogleMap mMap;
     GoogleDirections mDirections;
     LocationClient client;
+    ArrayList<Double> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_directions);
-        Bundle extras = getIntent().getExtras();
+//        Bundle extras = getIntent().getExtras();
+//
+//        Double frmLat = extras.getDouble("From Latitude");
+//        Double frmLng = extras.getDouble("From Longitude");
+//        Double toLat = extras.getDouble("To Latitude");
+//        Double toLng = extras.getDouble("To Longitude");
 
-        Double frmLat = extras.getDouble("From Latitude");
-        Double frmLng = extras.getDouble("From Longitude");
-        Double toLat = extras.getDouble("To Latitude");
-        Double toLng = extras.getDouble("To Longitude");
 
-        LatLng fromPosition = new LatLng(frmLat, frmLng);
-        LatLng toPosition = new LatLng(toLat, toLng);
 
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -82,6 +82,18 @@ public class DirectionsActivity extends FragmentActivity {
         }
         );
         client.connect();
+
+        ArrayList<Double> extras = (ArrayList<Double>) getIntent().getSerializableExtra("COORDINATES");
+
+        System.out.println(extras);
+        double frmLat = extras.get(0);
+        double frmLng = extras.get(1);
+        double toLat = extras.get(2);
+        double toLng = extras.get(3);
+        LatLng fromPosition = new LatLng(frmLat, frmLng);
+        LatLng toPosition = new LatLng(toLat, toLng);
+
+        System.out.println("from position"+fromPosition+"to position"+toPosition);
 
         mMap.addMarker(new MarkerOptions().position(fromPosition).title("Start"));
         mMap.addMarker(new MarkerOptions().position(toPosition).title("End"));
