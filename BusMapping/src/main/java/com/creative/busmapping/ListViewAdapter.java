@@ -25,18 +25,10 @@ public class ListViewAdapter extends BaseAdapter {
         String[] busNumbers = res.getStringArray(R.array.busNumbers);
         String[] busRoutes = res.getStringArray(R.array.busRoutes);
         String[] viaRoutes = res.getStringArray(R.array.viaRoutes);
-        String[] frmLat = res.getStringArray(R.array.fromLatitude);
-        Double[] frmDoubleLat = new Double[frmLat.length];
-        String[] frmLng = res.getStringArray(R.array.fromLongitude);
-        Double[] frmDoubleLng = new Double[frmLng.length];
-        String[] toLat = res.getStringArray(R.array.toLatitude);
-        Double[] toDoubleLat = new Double[toLat.length];
-        String[] toLng = res.getStringArray(R.array.toLongitude);
-        Double[] toDoubleLng = new Double[toLng.length];
 
         for(int i=0;i<busNumbers.length;i++)
         {
-            list.add(new SingleRow(busNumbers[i],busRoutes[i],viaRoutes[i],frmDoubleLat[i],frmDoubleLng[i],toDoubleLat[i],toDoubleLng[i]));
+            list.add(new SingleRow(busNumbers[i],busRoutes[i],viaRoutes[i]));
         }
 
     }

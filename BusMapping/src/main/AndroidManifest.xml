@@ -49,7 +49,12 @@
         </activity>
         <activity
             android:name="com.creative.busmapping.Activities.DirectionsActivity"
-            android:label="@string/title_activity_directions" >
+            android:label="@string/title_activity_directions"
+            android:parentActivityName="com.creative.busmapping.Activities.MainActivity" >>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.creative.busmapping.Activities.MainActivity" />
         </activity>
     </application>
 

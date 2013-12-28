@@ -83,7 +83,7 @@ public class MapActivity extends ActionBarActivity {
         Log.d("TAG", client.getLastLocation() + "");
         Location loc = client.getLastLocation();
         map.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude())));
-        CameraUpdate update = CameraUpdateFactory.newLatLng(new LatLng(loc.getLatitude(), loc.getLongitude()));
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(new LatLng(loc.getLatitude(), loc.getLongitude()),12);
         map.animateCamera(update);
     }
 

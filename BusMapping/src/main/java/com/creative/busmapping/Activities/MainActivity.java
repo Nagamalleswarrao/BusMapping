@@ -1,7 +1,6 @@
 package com.creative.busmapping.Activities;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,8 +18,8 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
 
     ListView listView;
-    Context context;
-    ArrayList<Double> arrayList;
+    ArrayList<Double> coordinatesList;
+    ArrayList<String> busInfoList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +51,11 @@ public class MainActivity extends Activity {
                 buttRoute.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        arrayList = new ArrayList<Double>();
+                        coordinatesList = new ArrayList<Double>();
+                        busInfoList = new ArrayList<String>();
+                        String[] busNumbers = getResources().getStringArray(R.array.busNumbers);
+                        String[] busRoutes = getResources().getStringArray(R.array.busRoutes);
+                        String[] viaRoutes = getResources().getStringArray(R.array.viaRoutes);
                         String[] frmLat = getResources().getStringArray(R.array.fromLatitude);
                         String[] frmLng = getResources().getStringArray(R.array.fromLongitude);
                         String[] toLat = getResources().getStringArray(R.array.toLatitude);
@@ -70,16 +73,19 @@ public class MainActivity extends Activity {
                               toDoubleLat[i] = Double.parseDouble(toLat[i]);
                               toDoubleLng[i] = Double.parseDouble(toLng[i]);
 
-                              arrayList.add(frmDoubleLat[i]);
-                              arrayList.add(frmDoubleLng[i]);
-                              arrayList.add(toDoubleLat[i]);
-                              arrayList.add(toDoubleLng[i]);
+                              coordinatesList.add(frmDoubleLat[i]);
+                              coordinatesList.add(frmDoubleLng[i]);
+                              coordinatesList.add(toDoubleLat[i]);
+                              coordinatesList.add(toDoubleLng[i]);
+
+                              busInfoList.add(busNumbers[i]);
+                              busInfoList.add(busRoutes[i]);
+                              busInfoList.add(viaRoutes[i]);
                         }
 
-                        System.out.println(arrayList);
-
                         Intent intent = new Intent(MainActivity.this, DirectionsActivity.class);
-                        intent.putExtra("COORDINATES",arrayList);
+                        intent.putExtra("CO_ORDINATES", coordinatesList);
+                        intent.putExtra("BUS_INFO",busInfoList);
 
                         startActivity(intent);
                     }
@@ -89,12 +95,8 @@ public class MainActivity extends Activity {
         });
     }
 
-    public void openMap(double frmLat, double frmLng, double toLat, double toLng){
-        Intent intent = new Intent(MainActivity.this, DirectionsActivity.class);
-        intent.putExtra("From Latitude",frmLat);
-        intent.putExtra("From Longitude",frmLng);
-        intent.putExtra("To Latitude",toLat);
-        intent.putExtra("To Longitude",toLng);
+    public void openMap(){
+        Intent intent = new Intent(MainActivity.this, MapActivity.class);
         startActivity(intent);
     }
 
@@ -118,11 +120,12 @@ public class MainActivity extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
         }else if(id == R.id.action_myLocation){
-            openMap(17.451619700000000000,78.416924999999990000,17.432614500000000000,78.502896299999970000);
+            openMap();
         }
         return super.onOptionsItemSelected(item);
     }

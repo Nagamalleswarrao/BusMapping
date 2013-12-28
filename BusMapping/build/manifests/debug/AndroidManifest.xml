@@ -29,7 +29,9 @@
 
         <activity android:label="@string/title_activity_map_activity2" android:name="com.creative.busmapping.Activities.MapActivity">
         </activity>
-        <activity android:label="@string/title_activity_directions" android:name="com.creative.busmapping.Activities.DirectionsActivity">
+        <activity android:label="@string/title_activity_directions" android:name="com.creative.busmapping.Activities.DirectionsActivity" android:parentActivityName="com.creative.busmapping.Activities.MainActivity">&gt;
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.creative.busmapping.Activities.MainActivity"/>
         </activity>
     </application>
 
