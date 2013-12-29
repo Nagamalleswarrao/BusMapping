@@ -29,22 +29,14 @@ public final class R {
  <item></item> 
  <item></item> 
          */
-        public static final int busNumbers=0x7f050000;
+        public static final int bus_numbers=0x7f050000;
         /**  <item></item> 
  <item></item> 
  <item></item> 
  <item></item> 
  <item></item> 
          */
-        public static final int busRoutes=0x7f050001;
-        /**  <item></item> 
- <item></item> 
- <item></item> 
- <item></item> 
- <item></item> 
- <item></item> 
-         */
-        public static final int fromLatitude=0x7f050002;
+        public static final int bus_routes=0x7f050001;
         /**  <item></item> 
  <item></item> 
  <item></item> 
@@ -52,16 +44,16 @@ public final class R {
  <item></item> 
  <item></item> 
          */
-        public static final int fromLongitude=0x7f050003;
+        public static final int from_latitude=0x7f050002;
         /**  <item></item> 
  <item></item> 
  <item></item> 
  <item></item> 
  <item></item> 
  <item></item> 
- <item></item> 
          */
-        public static final int toLatitude=0x7f050004;
+        public static final int from_longitude=0x7f050003;
+        public static final int timings=0x7f050004;
         /**  <item></item> 
  <item></item> 
  <item></item> 
@@ -70,7 +62,16 @@ public final class R {
  <item></item> 
  <item></item> 
          */
-        public static final int toLongitude=0x7f050005;
+        public static final int to_latitude=0x7f050005;
+        /**  <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+         */
+        public static final int to_longitude=0x7f050006;
         /**  <item>via </item> 
  <item>via </item> 
  <item>via </item> 
@@ -78,7 +79,7 @@ public final class R {
  <item>via </item> 
  <item>via </item> 
          */
-        public static final int viaRoutes=0x7f050006;
+        public static final int via_routes=0x7f050007;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -1126,10 +1127,10 @@ containing a value of this type.
         public static final int beginning=0x7f08000a;
         public static final int busNumberTextView=0x7f080040;
         public static final int busRouteTextView=0x7f080041;
-        public static final int buttRoute=0x7f08004c;
-        public static final int buttTimings=0x7f08004d;
+        public static final int buttRoute=0x7f08004b;
+        public static final int buttTimings=0x7f08004c;
         public static final int checkbox=0x7f080030;
-        public static final int child=0x7f08004b;
+        public static final int child=0x7f08004a;
         public static final int collapseActionView=0x7f080014;
         public static final int container=0x7f08003f;
         public static final int default_activity_button=0x7f08002b;
@@ -1140,6 +1141,7 @@ containing a value of this type.
         public static final int end=0x7f08000c;
         public static final int expand_activities_button=0x7f080029;
         public static final int expanded_menu=0x7f08002f;
+        public static final int gridView=0x7f08004d;
         public static final int home=0x7f08001a;
         public static final int homeAsUp=0x7f080005;
         public static final int hybrid=0x7f08000f;
@@ -1154,7 +1156,7 @@ containing a value of this type.
         public static final int never=0x7f080010;
         public static final int none=0x7f080009;
         public static final int normal=0x7f080000;
-        public static final int parent=0x7f080047;
+        public static final int parent=0x7f080046;
         public static final int progress_circular=0x7f08001b;
         public static final int progress_horizontal=0x7f08001c;
         public static final int radio=0x7f080032;
@@ -1177,11 +1179,10 @@ containing a value of this type.
         public static final int submit_area=0x7f08003c;
         public static final int tabMode=0x7f080002;
         public static final int terrain=0x7f08000e;
-        public static final int text1=0x7f080045;
-        public static final int text2=0x7f080046;
-        public static final int textView=0x7f080048;
-        public static final int textView2=0x7f080049;
-        public static final int textView3=0x7f08004a;
+        public static final int textView=0x7f080047;
+        public static final int textView2=0x7f080048;
+        public static final int textView3=0x7f080049;
+        public static final int timing_text=0x7f080045;
         public static final int title=0x7f08002e;
         public static final int top_action_bar=0x7f080023;
         public static final int up=0x7f080024;
@@ -1220,12 +1221,13 @@ containing a value of this type.
         public static final int activity_directions=0x7f030017;
         public static final int activity_main=0x7f030018;
         public static final int activity_map_activity=0x7f030019;
-        public static final int bus_info=0x7f03001a;
-        public static final int fragment_directions=0x7f03001b;
-        public static final int fragment_main=0x7f03001c;
-        public static final int fragment_map_activity2=0x7f03001d;
+        public static final int fragment_directions=0x7f03001a;
+        public static final int fragment_main=0x7f03001b;
+        public static final int fragment_map_activity2=0x7f03001c;
+        public static final int single_grid=0x7f03001d;
         public static final int single_row=0x7f03001e;
         public static final int support_simple_spinner_dropdown_item=0x7f03001f;
+        public static final int timings_info=0x7f030020;
     }
     public static final class menu {
         public static final int directions=0x7f0d0000;

@@ -33,6 +33,10 @@
 
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.creative.busmapping.Activities.MainActivity"/>
         </activity>
+        <activity android:label="Bus Timings" android:name="com.creative.busmapping.Activities.TimingsActivity" android:parentActivityName="com.creative.busmapping.Activities.MainActivity">&gt;
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.creative.busmapping.Activities.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>

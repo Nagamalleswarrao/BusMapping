@@ -33,6 +33,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
                 View view1 = view.findViewById(R.id.parent);
                 Button buttRoute = (Button)view.findViewById(R.id.buttRoute);
+                Button buttTimings = (Button)view.findViewById(R.id.buttTimings);
 
                 final View view2 = view.findViewById(R.id.child);
                 view2.setVisibility(View.VISIBLE);
@@ -53,13 +54,13 @@ public class MainActivity extends Activity {
                     public void onClick(View view) {
                         coordinatesList = new ArrayList<Double>();
                         busInfoList = new ArrayList<String>();
-                        String[] busNumbers = getResources().getStringArray(R.array.busNumbers);
-                        String[] busRoutes = getResources().getStringArray(R.array.busRoutes);
-                        String[] viaRoutes = getResources().getStringArray(R.array.viaRoutes);
-                        String[] frmLat = getResources().getStringArray(R.array.fromLatitude);
-                        String[] frmLng = getResources().getStringArray(R.array.fromLongitude);
-                        String[] toLat = getResources().getStringArray(R.array.toLatitude);
-                        String[] toLng = getResources().getStringArray(R.array.toLongitude);
+                        String[] busNumbers = getResources().getStringArray(R.array.bus_numbers);
+                        String[] busRoutes = getResources().getStringArray(R.array.bus_routes);
+                        String[] viaRoutes = getResources().getStringArray(R.array.via_routes);
+                        String[] frmLat = getResources().getStringArray(R.array.from_latitude);
+                        String[] frmLng = getResources().getStringArray(R.array.from_longitude);
+                        String[] toLat = getResources().getStringArray(R.array.to_latitude);
+                        String[] toLng = getResources().getStringArray(R.array.to_longitude);
 
                         double[] frmDoubleLat = new double[frmLat.length];
                         double[] frmDoubleLng = new double[frmLat.length];
@@ -91,6 +92,13 @@ public class MainActivity extends Activity {
                     }
                 });
 
+                buttTimings.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(MainActivity.this,TimingsActivity.class);
+                        startActivity(intent);
+                    }
+                });
             }
         });
     }
@@ -98,14 +106,6 @@ public class MainActivity extends Activity {
     public void openMap(){
         Intent intent = new Intent(MainActivity.this, MapActivity.class);
         startActivity(intent);
-    }
-
-    public void onClick(View view){
-        int id = view.getId();
-        switch (id){
-            case R.id.buttTimings:
-                break;
-        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

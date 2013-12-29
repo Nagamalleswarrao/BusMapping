@@ -22,9 +22,9 @@ public class ListViewAdapter extends BaseAdapter {
         context = c;
         list = new ArrayList<SingleRow>();
         Resources res = c.getResources();
-        String[] busNumbers = res.getStringArray(R.array.busNumbers);
-        String[] busRoutes = res.getStringArray(R.array.busRoutes);
-        String[] viaRoutes = res.getStringArray(R.array.viaRoutes);
+        String[] busNumbers = res.getStringArray(R.array.bus_numbers);
+        String[] busRoutes = res.getStringArray(R.array.bus_routes);
+        String[] viaRoutes = res.getStringArray(R.array.via_routes);
 
         for(int i=0;i<busNumbers.length;i++)
         {

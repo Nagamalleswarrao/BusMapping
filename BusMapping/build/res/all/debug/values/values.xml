@@ -4,7 +4,7 @@
     <!-- From: file:/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/src/main/res/values/strings.xml -->
     <eat-comment />
 
-    <string-array name="busNumbers">
+    <string-array name="bus_numbers">
         <item>1</item>
         <item>1B</item>
         <item>1I</item>
@@ -41,7 +41,7 @@
         <!-- <item></item> -->
         <!-- <item></item> -->
     </string-array>
-    <string-array name="busRoutes">
+    <string-array name="bus_routes">
         <item>Afzalgunj to Secunderabad</item>
         <item>Afzalgunj to JBS</item>
         <item>MGBS to Secunderabad</item>
@@ -72,7 +72,7 @@
         <!-- <item></item> -->
         <!-- <item></item> -->
     </string-array>
-    <string-array name="fromLatitude">
+    <string-array name="from_latitude">
         <item>17.373030800000000000</item>
         <item>17.373030800000000000</item>
         <item>17.378055000000000000</item>
@@ -104,7 +104,7 @@
         <!-- <item></item> -->
         <!-- <item></item> -->
     </string-array>
-    <string-array name="fromLongitude">
+    <string-array name="from_longitude">
         <item>78.476601000000070000</item>
         <item>78.476601000000070000</item>
         <item>78.484784399999970000</item>
@@ -136,7 +136,17 @@
         <!-- <item></item> -->
         <!-- <item></item> -->
     </string-array>
-    <string-array name="toLatitude">
+    <string-array name="timings">
+        <item>12:00</item>
+        <item>3:00</item>
+        <item>1:00</item>
+        <item>2:00</item>
+        <item>2:00</item>
+        <item>1:00</item>
+        <item>3:00</item>
+        <item>12:00</item>
+    </string-array>
+    <string-array name="to_latitude">
         <item>17.433258000000000000</item>
         <item>17.449164400000000000</item>
         <item>17.433258000000000000</item>
@@ -169,7 +179,7 @@
         <!-- <item></item> -->
         <!-- <item></item> -->
     </string-array>
-    <string-array name="toLongitude">
+    <string-array name="to_longitude">
         <item>78.502228000000060000</item>
         <item>78.496339199999970000</item>
         <item>78.502228000000060000</item>
@@ -202,7 +212,7 @@
         <!-- <item></item> -->
         <!-- <item></item> -->
     </string-array>
-    <string-array name="viaRoutes">
+    <string-array name="via_routes">
         <item>via CBS,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
         <item>via CBS,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad,Secenderabad,Patny</item>
         <item>via MGBS,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
