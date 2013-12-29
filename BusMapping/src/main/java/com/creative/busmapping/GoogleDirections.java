@@ -27,6 +27,7 @@ public class GoogleDirections {
 
     public final static String MODE_DRIVING = "driving";
     public final static String MODE_WALKING = "walking";
+    public final static String MODE_TRANSIT = "transit";
 
     public GoogleDirections() { }
 
@@ -34,7 +35,7 @@ public class GoogleDirections {
         String url = "http://maps.googleapis.com/maps/api/directions/xml?"
                 + "origin=" + start.latitude + "," + start.longitude
                 + "&destination=" + end.latitude + "," + end.longitude
-                + "&sensor=false&units=metric&mode=driving";
+                + "&sensor=false&units=metric&mode=transit&departure_time=1343641500";
 
         Log.d("GoogleMapsDirection", url);
         try {

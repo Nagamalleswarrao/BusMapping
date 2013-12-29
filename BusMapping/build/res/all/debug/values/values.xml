@@ -5,88 +5,234 @@
     <eat-comment />
 
     <string-array name="busNumbers">
-        <item>10H</item>
-        <item>158F</item>
-        <item>10Y/F</item>
-        <item>10K</item>
-        <item>9F</item>
         <item>1</item>
-        <item>18</item>
-        <item>1E</item>
-        <item>1i</item>
-        <item>1k</item>
+        <item>1B</item>
+        <item>1I</item>
+        <item>1K</item>
+        <item>1P</item>
+        <item>1V</item>
+        <item>1HD</item>
+        <item>1J</item>
+        <item>1MD</item>
+        <item>1P/25I</item>
+        <item>1F/38S</item>
+        <item>1/229</item>
+        <item>2C</item>
+        <item>2J</item>
+        <item>2U</item>
+        <item>2V</item>
+        <item>2Z</item>
+        <item>3</item>
+        <item>3A</item>
+        <item>3B</item>
+        <item>3C</item>
+        <item>3D</item>
+        <item>3H</item>
+        <item>3JJ</item>
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="busRoutes">
-        <item>Secendarabad to Kondapur</item>
-        <item>LB Nagar to Borabanda</item>
-        <item>Secendarabad to Borabanda</item>
-        <item>Secendarabad to Kukatpally</item>
-        <item>Borabanda to CBS</item>
-        <item>Afzalgunj to Secendarabad</item>
+        <item>Afzalgunj to Secunderabad</item>
         <item>Afzalgunj to JBS</item>
-        <item>Afzalgunj to Tukuram Gate</item>
-        <item>Secendarabad to MGBS</item>
-        <item>Secendarabad to MGBS</item>
+        <item>MGBS to Secunderabad</item>
+        <item>Koti to Secunderabad</item>
+        <item>Afzalgunj to Secunderabad</item>
+        <item>NGOs Colony to Secunderabad</item>
+        <item>Dilsukhnagar to Secunderabad</item>
+        <item>Ziaguda to Secunderabad</item>
+        <item>New Maruthi Nagar to Secunderabad</item>
+        <item>Koti to Old Alwal(IG Statue)</item>
+        <item>Falaknuma to Safilguda</item>
+        <item>Afzalgunj to Medchal</item>
+        <item>Barkas to Secunderabad</item>
+        <item>Ziaguda to Secunderabad</item>
+        <item>Secunderabad to Uppuguda</item>
+        <item>Charminar to Secunderabad</item>
+        <item>Madhuban colony to Secunderabad</item>
+        <item>Afzalgunj to Kushaiguda</item>
+        <item>Chilkanagar to Koti</item>
+        <item>Afzalgunj to NGRI 1st Gate</item>
+        <item>Afzalgunj to ECIL</item>
+        <item>Afzalgunj to Dammaiguda</item>
+        <item>Afzalgunj to ECIL</item>
+        <item>Ambedkar Nagar(Kapra) to MGBS</item>
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="fromLatitude">
-        <item>17.451619700000000000</item>
-        <item>17.416470700000000000</item>
-        <item>17.471619700000000000</item>
-        <item>17.481619700000000000</item>
-        <item>17.491619700000000000</item>
-        <item>17.501619700000000000</item>
-        <item>17.51619700000000000</item>
-        <item>17.521619700000000000</item>
-        <item>17.531619700000000000</item>
-        <item>17.541619700000000000</item>
+        <item>17.373030800000000000</item>
+        <item>17.373030800000000000</item>
+        <item>17.378055000000000000</item>
+        <item>17.383274800000000000</item>
+        <item>17.373030800000000000</item>
+        <item>17.326259800000000000</item>
+        <item>17.363848900000000000</item>
+        <item>17.366267100000000000</item>
+        <item>17.377967400000000000</item>
+        <item>17.382042000000000000</item>
+        <item>17.332490800000000000</item>
+        <item>17.373030800000000000</item>
+        <item>17.315684400000000000</item>
+        <item>17.366267100000000000</item>
+        <item>17.483319200000000000</item>
+        <item>17.361550500000000000</item>
+        <item>17.298164400000000000</item>
+        <item>17.373030800000000000</item>
+        <item>17.421267300000000000</item>
+        <item>17.373364700000000000</item>
+        <item>17.373364700000000000</item>
+        <item>17.373364700000000000</item>
+        <item>17.373364700000000000</item>
+        <item>17.5066761</item>
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="fromLongitude">
-        <item>78.416924999999990000</item>
-        <item>78.438246899999970000</item>
-        <item>78.436924999999990000</item>
-        <item>78.446924999999990000</item>
-        <item>78.456924999999990000</item>
-        <item>78.466924999999990000</item>
-        <item>78.476924999999990000</item>
-        <item>78.486924999999990000</item>
-        <item>78.496924999999990000</item>
-        <item>78.506924999999990000</item>
+        <item>78.476601000000070000</item>
+        <item>78.476601000000070000</item>
+        <item>78.484784399999970000</item>
+        <item>78.483150900000060000</item>
+        <item>78.476601000000070000</item>
+        <item>78.564665600000010000</item>
+        <item>78.534850699999990000</item>
+        <item>78.451037999999920000</item>
+        <item>78.539820400000050000</item>
+        <item>78.481727299999990000</item>
+        <item>78.470931999999950000</item>
+        <item>78.476601000000070000</item>
+        <item>78.482298200000060000</item>
+        <item>78.451037999999920000</item>
+        <item>78.550317200000000000</item>
+        <item>78.474750399999950000</item>
+        <item>78.431140100000000000</item>
+        <item>78.476601000000070000</item>
+        <item>78.564143000000060000</item>
+        <item>78.476777800000040000</item>
+        <item>78.476777800000040000</item>
+        <item>78.476777800000040000</item>
+        <item>78.476777800000040000</item>
+        <item>78.58063429999993</item>
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="toLatitude">
-        <item>17.432614500000000000</item>
-        <item>17.435943700000000000</item>
-        <item>17.452614500000000000</item>
-        <item>17.462614500000000000</item>
-        <item>17.472614500000000000</item>
-        <item>17.482614500000000000</item>
-        <item>17.492614500000000000</item>
-        <item>17.502614500000000000</item>
-        <item>17.512614500000000000</item>
-        <item>17.522614500000000000</item>
+        <item>17.433258000000000000</item>
+        <item>17.449164400000000000</item>
+        <item>17.433258000000000000</item>
+        <item>17.433258000000000000</item>
+        <item>17.433258000000000000</item>
+        <item>17.433258000000000000</item>
+        <item>17.433258000000000000</item>
+        <item>17.433258000000000000</item>
+        <item>17.433258000000000000</item>
+        <item>17.508603800000000000</item>
+        <item>17.462285100000000000</item>
+        <item>17.629480000000000000</item>
+        <item>17.483319200000000000</item>
+        <item>17.483319200000000000</item>
+        <item>17.341278800000000000</item>
+        <item>17.483319200000000000</item>
+        <item>17.483319200000000000</item>
+        <item>17.480950000000000000</item>
+        <item>17.382042000000000000</item>
+        <item>17.413899300000000000</item>
+        <item>17.468317000000000000</item>
+        <item>17.504789300000000000</item>
+        <item>17.468317000000000000</item>
+        <item>17.378055000000000000</item>
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="toLongitude">
-        <item>78.502896299999970000</item>
-        <item>78.341673099999980000</item>
-        <item>78.522896299999970000</item>
-        <item>78.532896299999970000</item>
-        <item>78.542896299999970000</item>
-        <item>78.552896299999970000</item>
-        <item>78.562896299999970000</item>
-        <item>78.572896299999970000</item>
-        <item>78.582896299999970000</item>
-        <item>78.592896299999970000</item>
+        <item>78.502228000000060000</item>
+        <item>78.496339199999970000</item>
+        <item>78.502228000000060000</item>
+        <item>78.502228000000060000</item>
+        <item>78.502228000000060000</item>
+        <item>78.502228000000060000</item>
+        <item>78.502228000000060000</item>
+        <item>78.502228000000060000</item>
+        <item>78.502228000000060000</item>
+        <item>78.503809400000020000</item>
+        <item>78.532492499999990000</item>
+        <item>78.494300999999950000</item>
+        <item>78.550317200000000000</item>
+        <item>78.550317200000000000</item>
+        <item>78.484429200000020000</item>
+        <item>78.550317200000000000</item>
+        <item>78.550317200000000000</item>
+        <item>78.570343699999960000</item>
+        <item>78.481727299999990000</item>
+        <item>78.547053300000020000</item>
+        <item>78.564118199999940000</item>
+        <item>78.598374300000040000</item>
+        <item>78.564118199999940000</item>
+        <item>78.484784399999970000</item>
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="viaRoutes">
-        <item>via Hi-tech city, Ammerpet</item>
-        <item>via Erragadda, Ammerpet</item>
-        <item>via Yousafguda, Ammerpet</item>
-        <item>via Erragadda, Ammerpet</item>
-        <item>via YMCA(Koti) Bus Stop, RTC Cross Rd, Musheerabad Bus Stop</item>
-        <item>via Bhoiguda, Musheerabad Bus Stop, Koti Bus Stop</item>
-        <item>via Putlibowli, YMCA(Koti) Bus Stop, RTC Cross Rd</item>
-        <item>via Bhoiguda, RTC Cross Rd, Koti Bus Stop</item>
-        <item>via Ram Koti, YMCA(Koti) Bus Stop, Bhoiguda</item>
-        <item>via Ram Koti, YMCA(Koti) Bus Stop, Bhoiguda</item>
+        <item>via CBS,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
+        <item>via CBS,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad,Secenderabad,Patny</item>
+        <item>via MGBS,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
+        <item>via Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
+        <item>via CBS,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
+        <item>via Panama,LB Nagar,Dilsukhnagar,Nalgonda X Roads,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
+        <item>via Mosarambagh,Malakpet,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
+        <item>via Osmania Hospital,CBS,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
+        <item>via Chaitanyapuri,Malakpet,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
+        <item>via Badichowdi,YMCA(Koti),RTC Cross Rd,Musheerabad,Secunderabad,JBS,Tirumalgherry,Lal Bazar,Alwal</item>
+        <item>via Rajpal Nagar,Charminar,Afzalgunj,CBS,Koti,RTC Cross Rd,Secunderabad,Tukaram Gate</item>
+        <item>via CMR College,Kompally,New Bowenpally,Paradise,Secunderabad,Musheerabad,RTC Cross Rd,Koti,CBS</item>
+        <item>via Charminar,Afzalgunj,CBS,Kachiguda,Barkatpura,Nallakunta,RTC Cross Rd,Musheerabad</item>
+        <item>via Osmania Hospital,CBS,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
+        <item>via Musheerabad,RTC Cross Rd,Barkatpura,Kachiguda,CBS,Afzalgunj,Charminar,Lal Darwaza</item>
+        <item>via Chilakalguda,Jamia Osmania,Nallakunta,Barkatpura,Kachiguda,CBS,Afzalgunj</item>
+        <item>via Musheerabad,RTC Cross Rd,Nallakunta,Barkatpura,Kachiguda,Afzalgunj,City College</item>
+        <item>via ECIL,HB Colony Phase-1,ZTS,Lalapet,Tarnaka,Nallakunta,Barkatpura,Kachiguda</item>
+        <item>via YMCA(Koti),Barkatpura,Vidya Nagar,Tarnaka,Habsiguda</item>
+        <item>via CBS,Koti,YMCA,Barkatpura,Nallakunta,Tarnaka,Habsiguda</item>
+        <item>via CBS,Chaderghat,Kachiguda,Barkatpura,Vidya Nagar,Tarnaka,ZTS,HB Colony,Kushaiguda</item>
+        <item>via Nagaram,ECIL,NRM College,ZTS,Tarnaka,Nallakunta,Narayanguda,Koti,CBS</item>
+        <item>via ECIL,NRM College,ZTS,Tarnaka,Nallakunta,Narayanguda,Koti,CBS</item>
+        <item>via Dammaiguda(lake),Saket(Kapra),Kapra,ECIL,NRM College,Tarnaka,Barkatpura,YMCA(Koti),Koti</item>
+        <!-- <item>via </item> -->
+        <!-- <item>via </item> -->
+        <!-- <item>via </item> -->
+        <!-- <item>via </item> -->
+        <!-- <item>via </item> -->
+        <!-- <item>via </item> -->
     </string-array>
     <!-- From: file:/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/build/exploded-bundles/ComAndroidSupportAppcompatV71900.aar/res/values/values.xml -->
     <eat-comment />
@@ -670,7 +816,7 @@
     <eat-comment />
 
     <string name="action_settings">Settings</string>
-    <string name="app_name">Hyderabad Transport</string>
+    <string name="app_name">Hyderabad Transit</string>
     <!-- From: file:/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/build/exploded-bundles/ComGoogleAndroidGmsPlayServices4030.aar/res/values/strings.xml -->
     <eat-comment />
 
@@ -705,7 +851,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_directions">Bus Route</string>
-    <string name="title_activity_map_activity2">MapActivity2</string>
+    <string name="title_activity_map_activity2">Current Location</string>
     <!-- From: file:/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/src/main/res/values/styles.xml -->
     <eat-comment />
 

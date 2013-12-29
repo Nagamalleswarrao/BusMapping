@@ -17,12 +17,67 @@ public final class R {
         public static final int abc_slide_out_top=0x7f040005;
     }
     public static final class array {
+        /**  <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+         */
         public static final int busNumbers=0x7f050000;
+        /**  <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+         */
         public static final int busRoutes=0x7f050001;
+        /**  <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+         */
         public static final int fromLatitude=0x7f050002;
+        /**  <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+         */
         public static final int fromLongitude=0x7f050003;
+        /**  <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+         */
         public static final int toLatitude=0x7f050004;
+        /**  <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+ <item></item> 
+         */
         public static final int toLongitude=0x7f050005;
+        /**  <item>via </item> 
+ <item>via </item> 
+ <item>via </item> 
+ <item>via </item> 
+ <item>via </item> 
+ <item>via </item> 
+         */
         public static final int viaRoutes=0x7f050006;
     }
     public static final class attr {
