@@ -317,6 +317,7 @@ int id action_myLocation 0x7f080057
 int id action_settings 0x7f080056
 int id activity_chooser_view_content 0x7f080028
 int id always 0x7f080012
+int id autocomplete 0x7f080049
 int id beginning 0x7f08000a
 int id busListView 0x7f080041
 int id busNumberTextView 0x7f080042
@@ -336,7 +337,6 @@ int id default_activity_button 0x7f08002b
 int id dialog 0x7f080015
 int id disableHome 0x7f080008
 int id dropdown 0x7f080016
-int id editTextDestination 0x7f080048
 int id editTextSource 0x7f080046
 int id edit_query 0x7f080033
 int id end 0x7f08000c
@@ -381,7 +381,7 @@ int id submit_area 0x7f08003c
 int id tabMode 0x7f080002
 int id terrain 0x7f08000e
 int id textView 0x7f080047
-int id textView2 0x7f080049
+int id textView2 0x7f080048
 int id textView3 0x7f080051
 int id timing_text 0x7f08004f
 int id title 0x7f08002e
@@ -421,11 +421,12 @@ int layout activity_directions 0x7f030019
 int layout activity_input 0x7f03001a
 int layout activity_main 0x7f03001b
 int layout activity_map_activity 0x7f03001c
-int layout bus_list_row 0x7f03001d
-int layout single_grid 0x7f03001e
-int layout single_row 0x7f03001f
-int layout support_simple_spinner_dropdown_item 0x7f030020
-int layout timings_info 0x7f030021
+int layout autocomplete_list 0x7f03001d
+int layout bus_list_row 0x7f03001e
+int layout single_grid 0x7f03001f
+int layout single_row 0x7f030020
+int layout support_simple_spinner_dropdown_item 0x7f030021
+int layout timings_info 0x7f030022
 int menu bus_station_list 0x7f0d0000
 int menu directions 0x7f0d0001
 int menu main 0x7f0d0002

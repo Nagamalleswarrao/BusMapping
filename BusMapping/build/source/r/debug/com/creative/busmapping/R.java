@@ -1125,6 +1125,7 @@ containing a value of this type.
         public static final int action_settings=0x7f080056;
         public static final int activity_chooser_view_content=0x7f080028;
         public static final int always=0x7f080012;
+        public static final int autocomplete=0x7f080049;
         public static final int beginning=0x7f08000a;
         public static final int busListView=0x7f080041;
         public static final int busNumberTextView=0x7f080042;
@@ -1144,7 +1145,6 @@ containing a value of this type.
         public static final int dialog=0x7f080015;
         public static final int disableHome=0x7f080008;
         public static final int dropdown=0x7f080016;
-        public static final int editTextDestination=0x7f080048;
         public static final int editTextSource=0x7f080046;
         public static final int edit_query=0x7f080033;
         public static final int end=0x7f08000c;
@@ -1189,7 +1189,7 @@ containing a value of this type.
         public static final int tabMode=0x7f080002;
         public static final int terrain=0x7f08000e;
         public static final int textView=0x7f080047;
-        public static final int textView2=0x7f080049;
+        public static final int textView2=0x7f080048;
         public static final int textView3=0x7f080051;
         public static final int timing_text=0x7f08004f;
         public static final int title=0x7f08002e;
@@ -1233,11 +1233,12 @@ containing a value of this type.
         public static final int activity_input=0x7f03001a;
         public static final int activity_main=0x7f03001b;
         public static final int activity_map_activity=0x7f03001c;
-        public static final int bus_list_row=0x7f03001d;
-        public static final int single_grid=0x7f03001e;
-        public static final int single_row=0x7f03001f;
-        public static final int support_simple_spinner_dropdown_item=0x7f030020;
-        public static final int timings_info=0x7f030021;
+        public static final int autocomplete_list=0x7f03001d;
+        public static final int bus_list_row=0x7f03001e;
+        public static final int single_grid=0x7f03001f;
+        public static final int single_row=0x7f030020;
+        public static final int support_simple_spinner_dropdown_item=0x7f030021;
+        public static final int timings_info=0x7f030022;
     }
     public static final class menu {
         public static final int bus_station_list=0x7f0d0000;
