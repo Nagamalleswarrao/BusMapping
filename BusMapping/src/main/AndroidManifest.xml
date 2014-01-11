@@ -11,8 +11,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <!--
          The following two permissions are not required to use
@@ -23,11 +23,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/transit_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.creative.busmapping.Activities.MainActivity"
+            android:name="com.creative.busmapping.Activities.BusStationListActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,20 +50,28 @@
         <activity
             android:name="com.creative.busmapping.Activities.DirectionsActivity"
             android:label="@string/title_activity_directions"
-            android:parentActivityName="com.creative.busmapping.Activities.MainActivity" >>
-
+            android:parentActivityName="com.creative.busmapping.Activities.BusStationListActivity" >
+>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.creative.busmapping.Activities.MainActivity" />
+                android:value="com.creative.busmapping.Activities.BusStationListActivity" />
         </activity>
         <activity
             android:name="com.creative.busmapping.Activities.TimingsActivity"
             android:label="Bus Timings"
-            android:parentActivityName="com.creative.busmapping.Activities.MainActivity" >>
-
+            android:parentActivityName="com.creative.busmapping.Activities.BusStationListActivity" >
+>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.creative.busmapping.Activities.MainActivity" />
+                android:value="com.creative.busmapping.Activities.BusStationListActivity" />
+        </activity>
+        <activity
+            android:name="com.creative.busmapping.Activities.MainActivity"
+            android:label="Bus List" >
+        </activity>
+        <activity
+            android:name="com.creative.busmapping.Activities.InputActivity"
+            android:label="Location" >
         </activity>
     </application>
 

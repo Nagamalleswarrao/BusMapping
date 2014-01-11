@@ -30,17 +30,17 @@
         <item>3D</item>
         <item>3H</item>
         <item>3JJ</item>
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="bus_routes">
         <item>Afzalgunj to Secunderabad</item>
@@ -67,11 +67,11 @@
         <item>Afzalgunj to Dammaiguda</item>
         <item>Afzalgunj to ECIL</item>
         <item>Ambedkar Nagar(Kapra) to MGBS</item>
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="via_routes">
         <item>via CBS,Koti,YMCA(Koti),RTC Cross Rd,Musheerabad</item>
@@ -98,12 +98,12 @@
         <item>via Nagaram,ECIL,NRM College,ZTS,Tarnaka,Nallakunta,Narayanguda,Koti,CBS</item>
         <item>via ECIL,NRM College,ZTS,Tarnaka,Nallakunta,Narayanguda,Koti,CBS</item>
         <item>via Dammaiguda(lake),Saket(Kapra),Kapra,ECIL,NRM College,Tarnaka,Barkatpura,YMCA(Koti),Koti</item>
-        <!--<item>via </item>-->
-        <!--<item>via </item>-->
-        <!--<item>via </item>-->
-        <!--<item>via </item>-->
-        <!--<item>via </item>-->
-        <!--<item>via </item>-->
+        <!-- <item>via </item> -->
+        <!-- <item>via </item> -->
+        <!-- <item>via </item> -->
+        <!-- <item>via </item> -->
+        <!-- <item>via </item> -->
+        <!-- <item>via </item> -->
     </string-array>
     <string-array name="from_latitude">
         <item>17.373030800000000000</item>
@@ -130,12 +130,12 @@
         <item>17.373364700000000000</item>
         <item>17.373364700000000000</item>
         <item>17.5066761</item>
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="from_longitude">
         <item>78.476601000000070000</item>
@@ -162,12 +162,12 @@
         <item>78.476777800000040000</item>
         <item>78.476777800000040000</item>
         <item>78.58063429999993</item>
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="to_latitude">
         <item>17.433258000000000000</item>
@@ -194,13 +194,13 @@
         <item>17.504789300000000000</item>
         <item>17.468317000000000000</item>
         <item>17.378055000000000000</item>
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="to_longitude">
         <item>78.502228000000060000</item>
@@ -227,13 +227,13 @@
         <item>78.598374300000040000</item>
         <item>78.564118199999940000</item>
         <item>78.484784399999970000</item>
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
+        <!-- <item></item> -->
     </string-array>
     <string-array name="timings">
         <item>12:00</item>
@@ -248,5 +248,6 @@
 
     <string name="title_activity_map_activity2">Current Location</string>
     <string name="title_activity_directions">Bus Route</string>
+    <string name="title_activity_bus_station_list">Nearby Bus Stops</string>
 
 </resources>

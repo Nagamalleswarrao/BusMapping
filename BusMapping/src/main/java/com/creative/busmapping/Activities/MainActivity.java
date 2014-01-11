@@ -95,7 +95,7 @@ public class MainActivity extends Activity {
                 buttTimings.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(MainActivity.this,TimingsActivity.class);
+                        Intent intent = new Intent(MainActivity.this,BusStationListActivity.class);
                         startActivity(intent);
                     }
                 });

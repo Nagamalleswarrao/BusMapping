@@ -1,15 +1,17 @@
 package com.creative.busmapping.Activities;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.location.Location;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v4.app.Fragment;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.creative.busmapping.R;
 import com.google.android.gms.common.ConnectionResult;
@@ -79,12 +81,70 @@ public class MapActivity extends ActionBarActivity {
 
      }
 
-    public void updateMap(){
+    public Location updateMap(){
+        Location loc = null;
         Log.d("TAG", client.getLastLocation() + "");
-        Location loc = client.getLastLocation();
-        map.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude())));
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(new LatLng(loc.getLatitude(), loc.getLongitude()),12);
-        map.animateCamera(update);
+        boolean isLocationAvailable = checkLocationAvailability();
+        if(isLocationAvailable){
+            loc = client.getLastLocation();
+            if(loc != null)
+            {
+                CameraUpdate update = CameraUpdateFactory.newLatLngZoom(new LatLng(loc.getLatitude(), loc.getLongitude()),12);
+                map.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude())));
+                map.animateCamera(update);
+            }
+        }else{
+            AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+            builder.setMessage("Location access not enabled");
+            builder.setPositiveButton("Open location settings", new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                    // TODO Auto-generated method stub
+                    Intent myIntent = new Intent(Settings.ACTION_SETTINGS );
+                    startActivity(myIntent);
+                    //get gps
+                }
+            });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                    // TODO Auto-generated method stub
+
+                }
+            });
+            builder.create().show();
+        }
+        return loc;
+
+
+
+    }
+
+    public boolean checkLocationAvailability(){
+
+        LocationManager lm = null;
+
+        boolean gps_enabled = false,
+                network_enabled = false;
+        if(lm==null)
+            lm = (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
+        try{
+            gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        }
+        catch(Exception ex){}
+
+        try{
+            network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        }
+        catch(Exception ex){}
+
+        if(!gps_enabled && !network_enabled){
+            return false;
+        }
+        else
+            return true;
     }
 
     private void addLatLong() {
@@ -112,22 +172,6 @@ public class MapActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_map_activity2, container, false);
-            return rootView;
-        }
     }
 
 }
