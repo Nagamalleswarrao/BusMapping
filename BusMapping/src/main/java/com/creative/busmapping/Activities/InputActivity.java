@@ -49,9 +49,6 @@ public class InputActivity extends Activity implements AdapterView.OnItemClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
 
-//        AutoCompleteTextView autoCompView = (AutoCompleteTextView) findViewById(R.id.autocomplete);
-//        autoCompView.setAdapter(new PlacesAutoCompleteAdapter(this, R.layout.autocomplete_list));
-
         Button buttDirections = (Button) findViewById(R.id.buttDirections);
         Button buttBusses = (Button) findViewById(R.id.buttbusses);
         mSourceEdit = (EditText) findViewById(R.id.editTextSource);
@@ -82,6 +79,9 @@ public class InputActivity extends Activity implements AdapterView.OnItemClickLi
             public void onClick(View view) {
 
                 Intent intent = new Intent(InputActivity.this, MainActivity.class);
+                intent.putExtra("SOURCE", mSourceEdit.getText().toString());
+                intent.putExtra("DESTINATION",mDestinationEdit.getText().toString());
+                intent.putExtra("bundle", getIntent().getExtras());
                 startActivity(intent);
             }
         });
@@ -107,6 +107,7 @@ public class InputActivity extends Activity implements AdapterView.OnItemClickLi
             sb.append("&input=" + URLEncoder.encode(input, "utf8"));
 
             URL url = new URL(sb.toString());
+            System.out.println("Auto complete url "+url);
             conn = (HttpURLConnection) url.openConnection();
             InputStreamReader in = new InputStreamReader(conn.getInputStream());
 

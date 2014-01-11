@@ -28,14 +28,19 @@ public class GoogleDirections {
     public final static String MODE_DRIVING = "driving";
     public final static String MODE_WALKING = "walking";
     public final static String MODE_TRANSIT = "transit";
+    long unixTime = System.currentTimeMillis() / 1000L;
 
+    public long getUnixTime() {
+        unixTime = System.currentTimeMillis() / 1000L;
+        return unixTime;
+    }
     public GoogleDirections() { }
 
     public Document getDocument(LatLng start, LatLng end, String mode) {
         String url = "http://maps.googleapis.com/maps/api/directions/xml?"
                 + "origin=" + start.latitude + "," + start.longitude
                 + "&destination=" + end.latitude + "," + end.longitude
-                + "&sensor=false&units=metric&mode=transit&departure_time=1343641500";
+                + "&sensor=false&units=metric&mode=transit&arrival_time="+getUnixTime();
 
         Log.d("GoogleMapsDirection", url);
         try {

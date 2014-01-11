@@ -55,11 +55,6 @@ public class BusStationListActivity extends Activity {
         setContentView(R.layout.activity_bus_station_list);
         busListView = (ListView) findViewById(R.id.busStationListView);
 
-
-
-//        Location loc = client.getLastLocation();
-//        LatLng coordinates = new LatLng(loc.getLatitude(), loc.getLongitude());
-
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -106,7 +101,7 @@ public class BusStationListActivity extends Activity {
                 LatLng  coordinates =new LatLng(loc.getLatitude(), loc.getLongitude());
                 final String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
                         + "location=" + coordinates.latitude + "," + coordinates.longitude
-                        + "&radius=10000&types=bus_station&sensor=false&key=AIzaSyAA7S81XKyj4zbp6-ZkYk_zPWkUHRgb2oo";
+                        + "&radius=1000&types=bus_station&sensor=false&key=AIzaSyAA7S81XKyj4zbp6-ZkYk_zPWkUHRgb2oo";
                 System.out.println(url);
                 new BusStationTask().execute(url);
             }

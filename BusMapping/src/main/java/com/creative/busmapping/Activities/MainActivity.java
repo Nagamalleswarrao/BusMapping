@@ -2,7 +2,9 @@ package com.creative.busmapping.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,16 +12,42 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.creative.busmapping.BusStation;
 import com.creative.busmapping.ListViewAdapter;
 import com.creative.busmapping.R;
+import com.google.android.gms.location.LocationClient;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends Activity {
 
     ListView listView;
+    LocationClient client;
     ArrayList<Double> coordinatesList;
     ArrayList<String> busInfoList;
+    List<BusStation> mBusList;
+    ArrayList<BusStation> busList;
+    String mSource = "none", mDestination = "none";
+    double mLatS = 10, mLngS = 10;
+    double mLatD = 17.4567, mlngD =  78.5669;
+
+    long unixTime = System.currentTimeMillis() / 1000;
+
+    public long getUnixTime() {
+        unixTime = System.currentTimeMillis() / 1000;
+        return unixTime;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +56,15 @@ public class MainActivity extends Activity {
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(new ListViewAdapter(this));
 
+        Bundle args = getIntent().getExtras();
+        if(args != null){
+            mSource = args.getString("SOURCE");
+            mDestination = args.getString("DESTINATION");
+            Bundle args1 = args.getBundle("bundle");
+            mLatS = args1.getDouble("lat");
+            mLngS = args1.getDouble("lng");
+        }
+        getBusList();
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
@@ -133,5 +170,93 @@ public class MainActivity extends Activity {
     private ListView getListView() {
         return listView;
     }
+
+//    Json parsing
+    public void getBusList(){
+         final String url = "http://maps.googleapis.com/maps/api/directions/json?"
+              + "origin=" + mLatS + "," + mLngS
+              + "&destination=" + mDestination
+              + "&sensor=false&units=metric&mode=transit&arrival_time="+getUnixTime();
+              Log.d("Google Transit List", url);
+              new BusListTask().execute(url);
+    }
+
+    private class BusListTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                URL webUrl = new URL(strings[0]);
+                HttpURLConnection con = (HttpURLConnection) webUrl.openConnection();
+                int sc = con.getResponseCode();
+                if (sc == 200) {
+                    InputStream is = con.getInputStream();
+                    String response = readResponse(is);
+                    return response;
+                }
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        private String readResponse(InputStream is) throws IOException {
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            byte[] data = new byte[2048];
+            int len = 0;
+            while ((len = is.read(data, 0, data.length)) >= 0) {
+                bos.write(data, 0, len);
+            }
+            return new String(bos.toByteArray(), "UTF-8");
+        }
+
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            if (s != null) {
+                try {
+                    mBusList = getBuses(s);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public List<BusStation> getBuses(String response) throws JSONException {
+
+        busList = new ArrayList<BusStation>();
+
+        JSONObject object = new JSONObject(response);
+        JSONArray routes = object.getJSONArray("routes");
+
+
+        for (int i = 0; i < routes.length(); i++) {
+            JSONArray legs = routes.getJSONObject(i).getJSONArray("legs");
+
+            for(int k = 0; k < legs.length(); k++){
+                JSONArray steps = legs.getJSONObject(k).getJSONArray("steps");
+
+                for(int j = 0; j < steps.length(); j++){
+                    if(!steps.getJSONObject(j).isNull("transit_details")){
+                        String name = steps.getJSONObject(j).getJSONObject("transit_details").getJSONObject("line").getString("name");
+                        String bus_number = steps.getJSONObject(j).getJSONObject("transit_details").getJSONObject("line").getString("short_name");
+                        Log.d("test", name);
+                        Log.d("test", bus_number);
+                    }
+
+                }
+            }
+
+        }
+
+        return busList;
+    }
+
+
 }
 
