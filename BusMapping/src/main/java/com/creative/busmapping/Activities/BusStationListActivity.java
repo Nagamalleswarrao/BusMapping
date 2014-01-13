@@ -54,7 +54,6 @@ public class BusStationListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus_station_list);
         busListView = (ListView) findViewById(R.id.busStationListView);
-
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override

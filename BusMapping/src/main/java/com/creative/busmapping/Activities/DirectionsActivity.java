@@ -63,7 +63,8 @@ public class DirectionsActivity extends FragmentActivity {
             busRoute = (TextView) findViewById(R.id.busRouteTextView);
             busNumber = (TextView) findViewById(R.id.busNumberTextView);
             String[] s = bus_route.split("-");
-            System.out.println(s);
+            mSource = s[0];
+            mDestination = s[1];
             busNumber.setText(bus_number);
             busRoute.setText(bus_route);
         }
@@ -108,9 +109,9 @@ public class DirectionsActivity extends FragmentActivity {
         String destination = mDestination;
         String source = mSource;
         System.out.println("Source"+mSource+"Destination"+mDestination);
-        LatLng lSource = new LatLng(mLat,mLng);
+//        LatLng lSource = new LatLng(mLat,mLng);
 //        LatLng lDestination = new LatLng(dDestination, dDestination);
-        mMap.addMarker(new MarkerOptions().position(lSource).title("Source"));
+//        mMap.addMarker(new MarkerOptions().position(lSource).title("Source"));
 //        mMap.addMarker(new MarkerOptions().position(destination).title("Destination"));
 
         Document doc = mDirections.getDocument(source, destination, GoogleDirections.MODE_DRIVING);
