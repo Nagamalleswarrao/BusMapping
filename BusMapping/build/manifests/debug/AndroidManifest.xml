@@ -39,6 +39,8 @@
         </activity>
         <activity android:label="Bus List" android:name="com.creative.busmapping.Activities.MainActivity">
         </activity>
+        <activity android:label="Bus Route" android:name="com.creative.busmapping.Activities.BusDirectionsActivity">
+        </activity>
         <activity android:label="Location" android:name="com.creative.busmapping.Activities.InputActivity">
         </activity>
     </application>

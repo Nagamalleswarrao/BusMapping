@@ -36,11 +36,12 @@ public class GoogleDirections {
     }
     public GoogleDirections() { }
 
-    public Document getDocument(LatLng start, LatLng end, String mode) {
+    public Document getDocument(String start, String end, String mode) {
         String url = "http://maps.googleapis.com/maps/api/directions/xml?"
-                + "origin=" + start.latitude + "," + start.longitude
-                + "&destination=" + end.latitude + "," + end.longitude
+                + "origin=" + start
+                + "&destination=" + end
                 + "&sensor=false&units=metric&mode=transit&arrival_time="+getUnixTime();
+        url=url.replace(" ","%20");
 
         Log.d("GoogleMapsDirection", url);
         try {

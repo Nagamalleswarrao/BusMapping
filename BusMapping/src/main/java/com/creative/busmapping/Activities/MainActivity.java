@@ -1,21 +1,24 @@
 package com.creative.busmapping.Activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import com.creative.busmapping.BusStation;
-import com.creative.busmapping.ListViewAdapter;
+import com.creative.busmapping.BusList;
 import com.creative.busmapping.R;
-import com.google.android.gms.location.LocationClient;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,21 +30,18 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
 
     ListView listView;
-    LocationClient client;
-    ArrayList<Double> coordinatesList;
     ArrayList<String> busInfoList;
-    List<BusStation> mBusList;
-    ArrayList<BusStation> busList;
+    List<BusList> mBusList;
+    ArrayList<BusList> busesList;
     String mSource = "none", mDestination = "none";
     double mLatS = 10, mLngS = 10;
-    double mLatD = 17.4567, mlngD =  78.5669;
-
     long unixTime = System.currentTimeMillis() / 1000;
 
     public long getUnixTime() {
@@ -54,7 +54,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(new ListViewAdapter(this));
 
         Bundle args = getIntent().getExtras();
         if(args != null){
@@ -63,6 +62,8 @@ public class MainActivity extends Activity {
             Bundle args1 = args.getBundle("bundle");
             mLatS = args1.getDouble("lat");
             mLngS = args1.getDouble("lng");
+//            mLngS = 78.409816699999960000;
+//            mLatS = 17.455570500000000000;
         }
         getBusList();
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -89,43 +90,23 @@ public class MainActivity extends Activity {
                 buttRoute.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        coordinatesList = new ArrayList<Double>();
                         busInfoList = new ArrayList<String>();
-                        String[] busNumbers = getResources().getStringArray(R.array.bus_numbers);
-                        String[] busRoutes = getResources().getStringArray(R.array.bus_routes);
-                        String[] viaRoutes = getResources().getStringArray(R.array.via_routes);
-                        String[] frmLat = getResources().getStringArray(R.array.from_latitude);
-                        String[] frmLng = getResources().getStringArray(R.array.from_longitude);
-                        String[] toLat = getResources().getStringArray(R.array.to_latitude);
-                        String[] toLng = getResources().getStringArray(R.array.to_longitude);
-
-                        double[] frmDoubleLat = new double[frmLat.length];
-                        double[] frmDoubleLng = new double[frmLat.length];
-                        double[] toDoubleLat = new double[frmLat.length];
-                        double[] toDoubleLng = new double[frmLat.length];
-
                         for (int i=position;i<=position;i++)
                         {
-                              frmDoubleLat[i] = Double.parseDouble(frmLat[i]);
-                              frmDoubleLng[i] = Double.parseDouble(frmLng[i]);
-                              toDoubleLat[i] = Double.parseDouble(toLat[i]);
-                              toDoubleLng[i] = Double.parseDouble(toLng[i]);
-
-                              coordinatesList.add(frmDoubleLat[i]);
-                              coordinatesList.add(frmDoubleLng[i]);
-                              coordinatesList.add(toDoubleLat[i]);
-                              coordinatesList.add(toDoubleLng[i]);
-
-                              busInfoList.add(busNumbers[i]);
-                              busInfoList.add(busRoutes[i]);
-                              busInfoList.add(viaRoutes[i]);
+                            BusList temp = busesList.get(position);
+                            busInfoList.add(temp.name);
+                            busInfoList.add(temp.busNumber);
                         }
-
+                        System.out.println("source"+mSource+"destination"+mDestination+"lat"+mLatS+"lng"+mLngS);
                         Intent intent = new Intent(MainActivity.this, DirectionsActivity.class);
-                        intent.putExtra("CO_ORDINATES", coordinatesList);
                         intent.putExtra("BUS_INFO",busInfoList);
-
+                        intent.putExtra("SOURCE", mSource);
+                        intent.putExtra("DESTINATION",mDestination);
+                        intent.putExtra("SOURCE_LAT",mLatS);
+                        intent.putExtra("DESTINATION_LNG",mLngS);
+                        intent.putExtra("bundle", getIntent().getExtras());
                         startActivity(intent);
+
                     }
                 });
 
@@ -186,14 +167,35 @@ public class MainActivity extends Activity {
         @Override
         protected String doInBackground(String... strings) {
             try {
-                URL webUrl = new URL(strings[0]);
+                String key = "&destination=";
+                String url = strings[0];
+                int index = url.indexOf(key) + key.length();
+                String sub1 = url.substring(0, index - key.length());
+                String sub2 = url.substring(index, url.length());
+                String sub3 = sub2.substring(sub2.indexOf('&'), sub2.length());
+
+                String subUrl = url.substring(index, index + sub2.indexOf('&'));
+
+                String newUrl = sub1 + key + URLEncoder.encode(subUrl, "utf-8") + sub3;
+                Log.d("Dest", newUrl);
+                URL webUrl = new URL(newUrl);
+
+                String response = null;
                 HttpURLConnection con = (HttpURLConnection) webUrl.openConnection();
                 int sc = con.getResponseCode();
-                if (sc == 200) {
-                    InputStream is = con.getInputStream();
-                    String response = readResponse(is);
-                    return response;
+                Log.d("Code", sc + " " + con.getResponseMessage() + " ");
+                if(sc == 400){
+                    InputStream er = con.getErrorStream();
+                    String res = readResponse(er);
+                    Log.d("Body", res);
                 }
+                else if (sc == 200)
+                {
+                    InputStream is = con.getInputStream();
+                    response = readResponse(is);
+                }
+                return response;
+
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -217,7 +219,7 @@ public class MainActivity extends Activity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            if (s != null) {
+            if (s != null && !s.isEmpty()) {
                 try {
                     mBusList = getBuses(s);
                 } catch (JSONException e) {
@@ -227,9 +229,11 @@ public class MainActivity extends Activity {
         }
     }
 
-    public List<BusStation> getBuses(String response) throws JSONException {
+    public ArrayList<BusList> getBuses(String response) throws JSONException {
 
-        busList = new ArrayList<BusStation>();
+
+        Log.d("GetBuses", "I am here!!");
+        busesList = new ArrayList<BusList>();
 
         JSONObject object = new JSONObject(response);
         JSONArray routes = object.getJSONArray("routes");
@@ -247,6 +251,11 @@ public class MainActivity extends Activity {
                         String bus_number = steps.getJSONObject(j).getJSONObject("transit_details").getJSONObject("line").getString("short_name");
                         Log.d("test", name);
                         Log.d("test", bus_number);
+                        BusList busList = new BusList(name,bus_number);
+                        busList.name = name;
+                        busList.busNumber = bus_number;
+                        busesList.add(busList);
+                        listView.setAdapter(new BusesListViewAdapter(this));
                     }
 
                 }
@@ -254,7 +263,59 @@ public class MainActivity extends Activity {
 
         }
 
-        return busList;
+        return busesList;
+    }
+
+    public class BusesListViewAdapter extends BaseAdapter {
+
+        Context context;
+        public BusesListViewAdapter(Context context) {
+            this.context=context;
+        }
+
+        @Override
+        public int getCount() {
+            return busesList.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return busesList.get(i);
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return i;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View row = inflater.inflate(R.layout.single_row,viewGroup,false);
+            TextView busName = (TextView) row.findViewById(R.id.textView2);
+            TextView busNumber = (TextView) row.findViewById(R.id.textView);
+
+            if (i%3 == 0)
+            {
+                row.setBackgroundResource(R.drawable.violet);
+            }
+            else if (i%2 == 0)
+            {
+                row.setBackgroundResource(R.drawable.blue);
+            }
+            else if (i%5 == 0)
+            {
+                row.setBackgroundResource(R.drawable.red);
+            }
+            else {
+                row.setBackgroundResource((i%2 == 0)? R.drawable.violet : R.drawable.glowblue);
+            }
+
+            BusList temp = busesList.get(i);
+            busName.setText(temp.name);
+            busNumber.setText(temp.busNumber);
+            return row;
+        }
     }
 
 

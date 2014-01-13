@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Secendarabad"
+        android:text="LB nagar"
         android:ems="10"
         android:textSize="15dp"
         android:id="@+id/autocomplete"
@@ -65,26 +65,19 @@
         android:layout_height="wrap_content"
         android:text="Get Directions"
         android:id="@+id/buttDirections"
-        android:layout_below="@+id/buttbusses"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp" />
+        android:layout_alignTop="@+id/buttbusses"
+        android:layout_toRightOf="@+id/buttbusses" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Busses"
+        android:text="Get Buses"
         android:id="@+id/buttbusses"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/buttTimings2"
-        android:layout_alignStart="@+id/buttTimings2" />
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/autocomplete"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="68dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Timings"
-        android:id="@+id/buttTimings2"
-        android:layout_marginTop="37dp"
-        android:layout_below="@+id/buttDirections"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout><!-- From: file:/Users/Eshwar/Desktop/DeveloperAndi/BusMappingProject/BusMapping/src/main/res/layout/activity_input.xml -->

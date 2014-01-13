@@ -47,6 +47,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="via Hi-tech city, Ammerpet"
+            android:visibility="gone"
             android:textSize="12dp"
             android:textStyle="italic"
             android:paddingTop="3dp"

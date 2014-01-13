@@ -70,6 +70,10 @@
             android:label="Bus List" >
         </activity>
         <activity
+            android:name="com.creative.busmapping.Activities.BusDirectionsActivity"
+            android:label="Bus Route" >
+        </activity>
+        <activity
             android:name="com.creative.busmapping.Activities.InputActivity"
             android:label="Location" >
         </activity>

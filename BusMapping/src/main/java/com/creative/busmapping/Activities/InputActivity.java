@@ -36,6 +36,7 @@ public class InputActivity extends Activity implements AdapterView.OnItemClickLi
 
 
     EditText mSourceEdit;
+    Context context;
     AutoCompleteTextView mDestinationEdit;
     private static final String LOG_TAG = "Hyderabad Transit";
 
@@ -52,6 +53,7 @@ public class InputActivity extends Activity implements AdapterView.OnItemClickLi
         Button buttDirections = (Button) findViewById(R.id.buttDirections);
         Button buttBusses = (Button) findViewById(R.id.buttbusses);
         mSourceEdit = (EditText) findViewById(R.id.editTextSource);
+        mSourceEdit.setEnabled(false);
         Bundle args = getIntent().getExtras();
         String src = "none";
         if(args != null){
@@ -65,8 +67,7 @@ public class InputActivity extends Activity implements AdapterView.OnItemClickLi
         buttDirections.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent(InputActivity.this, DirectionsActivity.class);
+                Intent intent = new Intent(InputActivity.this, BusDirectionsActivity.class);
                 intent.putExtra("SOURCE", mSourceEdit.getText().toString());
                 intent.putExtra("DESTINATION",mDestinationEdit.getText().toString());
                 intent.putExtra("bundle", getIntent().getExtras());
@@ -85,8 +86,6 @@ public class InputActivity extends Activity implements AdapterView.OnItemClickLi
                 startActivity(intent);
             }
         });
-
-
     }
 
     @Override
@@ -162,6 +161,7 @@ public class InputActivity extends Activity implements AdapterView.OnItemClickLi
         public String getItem(int index) {
             return resultList.get(index);
         }
+
 
         @Override
         public Filter getFilter() {

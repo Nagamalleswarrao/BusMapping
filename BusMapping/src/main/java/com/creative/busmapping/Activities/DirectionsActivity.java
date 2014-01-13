@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.creative.busmapping.GoogleDirections;
 import com.creative.busmapping.R;
@@ -33,6 +34,8 @@ public class DirectionsActivity extends FragmentActivity {
     GoogleMap mMap;
     GoogleDirections mDirections;
     LocationClient client;
+    ArrayList<String> busInfoList;
+    TextView busRoute,busNumber;
 
     String mSource = "none", mDestination = "none";
     double mLat = 10, mLng = 10;
@@ -50,9 +53,19 @@ public class DirectionsActivity extends FragmentActivity {
         if(args != null){
             mSource = args.getString("SOURCE");
             mDestination = args.getString("DESTINATION");
-            Bundle args1 = args.getBundle("bundle");
-            mLat = args1.getDouble("lat");
-            mLng = args1.getDouble("lng");
+            busInfoList = args.getStringArrayList("BUS_INFO");
+            mLat = args.getDouble("SOURCE_LAT");
+            mLng = args.getDouble("DESTINATION_LNG");
+
+            String bus_number = busInfoList.get(1);
+            String bus_route = busInfoList.get(0);
+
+            busRoute = (TextView) findViewById(R.id.busRouteTextView);
+            busNumber = (TextView) findViewById(R.id.busNumberTextView);
+            String[] s = bus_route.split("-");
+            System.out.println(s);
+            busNumber.setText(bus_number);
+            busRoute.setText(bus_route);
         }
 
         if (android.os.Build.VERSION.SDK_INT > 9) {
@@ -92,12 +105,13 @@ public class DirectionsActivity extends FragmentActivity {
         );
         client.connect();
 
-        LatLng source = new LatLng(mLat, mLng);
-        LatLng destination = new LatLng(17.4567, 78.5669);
+        String destination = mDestination;
+        String source = mSource;
         System.out.println("Source"+mSource+"Destination"+mDestination);
-
-        mMap.addMarker(new MarkerOptions().position(source).title("Source"));
-        mMap.addMarker(new MarkerOptions().position(destination).title("Destination"));
+        LatLng lSource = new LatLng(mLat,mLng);
+//        LatLng lDestination = new LatLng(dDestination, dDestination);
+        mMap.addMarker(new MarkerOptions().position(lSource).title("Source"));
+//        mMap.addMarker(new MarkerOptions().position(destination).title("Destination"));
 
         Document doc = mDirections.getDocument(source, destination, GoogleDirections.MODE_DRIVING);
         int duration = mDirections.getDurationValue(doc);
